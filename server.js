@@ -16,8 +16,8 @@ app.post('/send-email', async (req, res) => {
     const { first_name, last_name, email, user_phone, message } = req.body;
 
     const sendSmtpEmail = {
-      sender: { email: 'clinic@example.com', name: 'Clinic Name' }, // verified sender
-      to: [{ email: 'clinic@example.com' }], // recipient
+      sender: { email: 'ajayjkr66@gmail.com', name: 'Clinic Name' }, // verified sender
+      to: [{ email: 'ajayjkr66@gmail.com' }], // recipient
       subject: 'New Contact Form Submission',
       htmlContent: `<h2>New message from website</h2>
                     <p><strong>Name:</strong> ${first_name} ${last_name}</p>
