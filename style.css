@@ -1,0 +1,119 @@
+/* style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Phone icon */
+.phone-icon {
+  font-size: 28px;
+  color: #2563eb;
+}
+
+/* Hero Slides */
+.slide {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+.slide img {
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: filter 2.3s ease, transform 8s ease;
+}
+.slide.active img {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.content-1 { animation: scaleIn 1.2s ease forwards; }
+.content-2 { animation: scaleUpSlide 1.4s ease forwards; }
+.content-3 {
+  animation: typing 1s steps(30, end) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.content-4 { animation: rise 1s ease forwards; }
+
+/* Keyframes */
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes scaleUpSlide {
+  0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+  50% { transform: scale(1) translateY(10px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+@keyframes rise { 0% { transform: translateY(25px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+/* About Us */
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Line / Marquee */
+@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+@keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.animate-marquee { display: inline-flex; animation: marquee 20s linear infinite; }
+.rotate-icon { animation: rotate 10s linear infinite; transform-origin: center; }
+
+/* -------------------- Testimonials / Scrolling Rows -------------------- */
+
+/* Track & Viewport */
+.track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.viewport {
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Fade overlays */
+.viewport::before,
+.viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.viewport::before { left: 0; background: linear-gradient(to right, #f1f5f9 24px, transparent 100%); }
+.viewport::after { right: 0; background: linear-gradient(to left, #f1f5f9 24px, transparent 100%); }
+
+/* Desktop overrides */
+@media (min-width: 768px) {
+  .viewport::before,
+  .viewport::after { width: 14rem; }
+  .viewport::before { background: linear-gradient(to right, #f1f5f9 130px, transparent 100%); }
+  .viewport::after { background: linear-gradient(to left, #f1f5f9 130px, transparent 100%); }
+}
+
+/* Animations for scrolling */
+@keyframes left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+.left { animation: left 28s linear infinite; }
+.right { animation: right 24s linear infinite; }
