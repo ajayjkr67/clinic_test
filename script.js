@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ---------------------- Navbar ----------------------
+  // let lastY = 0;
+  // const nav = document.querySelector("nav");
+  // const showUntil = 800; // px before hiding starts
+
+  // window.addEventListener("scroll", () => {
+  //   const y = window.scrollY;
+
+  //   if (y < showUntil) {
+  //     nav.classList.remove("nav-hide");
+  //     lastY = y;
+  //     return;
+  //   }
+
+  //   if (y > lastY) nav.classList.add("nav-hide");
+  //   else nav.classList.remove("nav-hide");
+
+  //   lastY = y;
+  // });
+
   // ---------------------- Hero Section ----------------------
   const toggle = document.getElementById("toggle");
   const slider = document.getElementById("slider");
@@ -75,19 +95,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = [
     { title:"Health Checkup", desc:"Regular eye exams using advanced diagnostic tools to ensure clear and healthy vision.", img:"https://mednix.themeht.com/wp-content/uploads/2025/10/eyecare10-600x500.jpg", icon:"fa-regular fa-calendar-minus" },
     { title:"Retina Evaluation", desc:"Early detection and treatment for retinal conditions to preserve sight and eye health.", img:"https://mednix.themeht.com/wp-content/uploads/2025/10/eyecare4-600x500.jpg", icon:"fa-regular fa-eye" },
-    { title:"Contact Lens Fitting", desc:"Personalized lens selection and fitting for comfort and clear vision all day.", img:"https://mednix.themeht.com/wp-content/uploads/2025/10/eyecare7-600x500.jpg", icon:"fa-regular fa-circle" },
+    { title:"Contact Lens Fitting", desc:"Personalized lens selection and fitting for clear vision all day.", img:"https://mednix.themeht.com/wp-content/uploads/2025/10/eyecare7-600x500.jpg", icon:"fa-regular fa-circle" },
     { title:"Vision Therapy", desc:"Customized programs to strengthen eye coordination and improve visual performance.", img:"https://mednix.themeht.com/wp-content/uploads/2025/10/eyecare9-600x500.jpg", icon:"fa-regular fa-lightbulb" },
     { title:"Optical Solutions", desc:"Wide range of eyewear options for style, comfort, and precision vision.", img:"https://mednix.themeht.com/wp-content/uploads/2025/10/eyecare8-600x500.jpg", icon:"fa-regular fa-glasses" },
   ];
   const container = document.getElementById("cardContainer");
   if(container){
     container.innerHTML = cards.map(c => `
-      <div class="swiper-slide bg-white rounded-3xl overflow-hidden relative">
+      <div class="swiper-slide bg-white rounded-3xl overflow-hidden relative cursor-pointer">
         <div class="relative group">
           <div class="overflow-hidden">
             <img src="${c.img}" class="w-full transition-transform duration-500 group-hover:scale-110" alt="${c.title}"/>
           </div>
-          <div class="absolute top-72 md:top-80 left-5 z-20 bg-blue-600 px-5 py-4 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div class="absolute top-64 md:top-56 2xl:top-80 left-5 z-20 bg-blue-600 px-5 py-4 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <i class="${c.icon} text-3xl text-white"></i>
           </div>
         </div>
@@ -108,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 30,
     loop: true,
     speed: 1200,
-    autoplay: { delay: 6000, disableOnInteraction: false },
+    autoplay: { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true },
     pagination: { el: ".swiper-pagination", clickable: true },
     breakpoints: { 0:{ slidesPerView:1 }, 640:{ slidesPerView:2 }, 1024:{ slidesPerView:4 } }
   });
@@ -123,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   teamMembersData.forEach(({name, role, img, el}) => {
     el.innerHTML = `
-      <div class="relative group">
+      <div class="relative group cursor-pointer">
         <div class="overflow-hidden rounded-3xl">
           <img src="${img}" class="w-full group-hover:scale-110 transition-transform duration-500" alt="">
         </div>
@@ -171,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function card(p) {
     return `
-      <article class="flex-shrink-0 w-[8%] md:w-full max-w-[400px] bg-white rounded-2xl px-4 py-2 md:py-5 shadow-lg shadow-gray-300/50 border-b-2 border-transparent group hover:border-blue-600 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+      <article class="flex-shrink-0 w-[8%] md:w-full max-w-[400px] bg-white cursor-pointer rounded-2xl px-4 py-2 md:py-5 shadow-lg shadow-gray-300/50 border-b-2 border-transparent group hover:border-blue-600 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
         <div class='flex items-center gap-3 py-3'>
           <img src='https://i.pravatar.cc/80?img=${p.img}' class='w-14 h-14 md:w-20 md:h-20 rounded-full'>
           <div class='text-lg md:text-2xl text-blue-950 group-hover:text-blue-600'>${p.n}</div>

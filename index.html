@@ -3,75 +3,94 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jaykron</title>
+        <link rel="icon" href="./images/logo.png" type="image/png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="./style.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* .nav-hide {
+            transform: translateY(-100%);
+            transition: transform .3s;
+            }
+            nav {
+            transition: transform .3s;
+            position: sticky;
+            top: 0;
+            } */
+        </style>
     </head>
     <body class="bg-gray-50">
         <nav class="w-full bg-gray-50 shadow rounded-b-3xl sticky top-0 z-50">
-            <div class="mx-auto px-8 2xl:px-20 py-3 md:py-4 flex justify-between items-center">
+            <div class="mx-auto px-8 xl:py-4 2xl:px-10 py-3 flex justify-between items-center">
                 <!-- LEFT SIDE -->
                 <div class="flex items-center space-x-6">
                     <!-- Logo -->
-                    <div class="logo flex items-center space-x-2">
-                        <img class="w-10 pt-1" src="./images/logo.png" alt="">
-                        <div class="pr-6 border-r border-gray-300 text-4xl">Jaykron</div>
+                    <div class="logo flex items-center space-x-2 cursor-pointer">
+                        <img class="w-10  2xl:w-10 pt-1" src="./images/logo.png" alt="">
+                        <div class="pr-6 xl:pr-4 2xl:pr-6 border-r border-gray-300 text-4xl xl:text-2xl 2xl:text-4xl">Jaykron</div>
                     </div>
                     <!-- Phone section -->
-                    <div class="hidden md:flex items-center space-x-5">
+                    <div class="hidden min-[1230px]:flex items-center space-x-3 2xl:space-x-5">
                         <i class="fas fa-phone phone-icon"></i>
                         <div class="flex flex-col leading-tight">
                             <span class="text-gray-900 text-sm font-light">
                                 Emergency call:
-                            </span
-              >
-                            <span class="text-gray-700 hover:text-blue-600 text-xl font-light transition cursor-pointer">
+                            </span>
+                            <span class="text-gray-700 hover:text-blue-700 hover:font-medium text-xl xl:text-lg 2xl:text-xl font-light transition-all cursor-pointer">
                                 (888) 4567890
-                            </span
-              >
+                            </span>
                         </div>
                     </div>
                 </div>
                 <!-- RIGHT SIDE -->
                 <div class="flex items-center space-x-6">
                     <!-- Hamburger for small screens -->
-                    <button id="hamburger" class="md:hidden flex flex-col justify-between w-8 h-6 focus:outline-none">
+                    <button id="hamburger" class="xl:hidden flex flex-col justify-between w-8 h-6 focus:outline-none">
                         <span class="block h-1 w-full bg-gray-800 rounded"></span>
                         <span class="block h-1 w-full bg-gray-800 rounded"></span>
                         <span class="block h-1 w-full bg-gray-800 rounded"></span>
                     </button>
                     <!-- Nav links -->
-                    <div id="nav-links" class="hidden md:flex items-center space-x-16">
-                        <div class="flex space-x-8">
-                            <a href="#" class="px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
+                    <div id="nav-links" class="hidden xl:flex items-center xl:space-x-5 2xl:space-x-16">
+                        <div class="flex xl:space-x-2 2xl:space-x-3">
+                            <a href="#hero" class="xl:px-3 2xl:px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
                                 HOME
-                            </a
-              >
-                            <a href="#" class="px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
+                            </a>
+                            <a href="#about" class="xl:px-3 2xl:px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
                                 ABOUT
-                            </a
-              >
-                            <a href="#" class="px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
+                            </a>
+                            <a href="#services" class="xl:px-3 2xl:px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
                                 SERVICES
-                            </a
-              >
-                            <a href="#" class="px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
-                                TESIMONEALS
-                            </a
-              >
-                            <a href="#" class="px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
+                            </a>
+                            <a href="#team" class="xl:px-3 2xl:px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
+                                TEAM
+                            </a>
+                            <a href="#testimonials" class="xl:px-3 2xl:px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
+                                TESIMONALS
+                            </a>
+                            <a href="#contact" class="xl:px-3 2xl:px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition active:bg-blue-600 active:text-white">
                                 CONTACT
-                            </a
-              >
+                            </a>
                         </div>
                         <!-- Toggle slider -->
-                        <div id="toggle" class="relative w-20 h-10 2xl:w-28 2xl:h-12 bg-gray-400 rounded-xl overflow-hidden cursor-pointer">
+                        <!-- <div id="toggle" class="relative w-20 h-10 2xl:w-28 2xl:h-12 bg-gray-400 rounded-xl overflow-hidden cursor-pointer">
                             <div id="slider" class="absolute w-10 h-10 2xl:w-14 2xl:h-12 bg-blue-600 top-0 left-0 transition-transform duration-300"></div>
-                        </div>
+                        </div> -->
+                        <a href="#appointment" class="bg-blue-600 xl:py-2 xl:px-3 2xl:py-2 2xl:px-3 text-white rounded-lg group hover:bg-blue-800 transition-all duration-800 cursor-pointer">
+                            Appointment
+                            <span>
+                                <i class="fas fa-arrow-right ms-2 px-2 py-1 2xl:px-4 2xl:py-2 rounded bg-white text-black transition-all group-hover:bg-black group-hover:text-white duration-800"></i>
+                            </span>
+                        </a>
                         <!-- Dice button -->
-                        <button class="w-12 h-12 bg-white flex items-center justify-center rounded group">
+                        <button class="w-10 h-10 2xl:w-12 2xl:h-12 max-[1046px]:hidden bg-white flex items-center justify-center rounded group">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="h-6 w-6 transform rotate-45 group-hover:rotate-[400deg] transition-transform duration-1000"
@@ -112,88 +131,89 @@
                 </div>
             </div>
             <!-- Mobile nav links -->
-            <div id="mobile-nav" class="md:hidden overflow-hidden max-h-0 transition-all duration-300 flex-col bg-gray-100 w-full px-6 py-0 space-y-3">
-                <a href="#" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+            <div id="mobile-nav" class="xl:hidden overflow-hidden max-h-0 transition-all duration-300 flex-col bg-gray-100 w-full px-6 py-0 space-y-3">
+                <a href="#home" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
                     HOME
-                </a
-        >
-                <a href="#" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+                </a>
+                <a href="#about" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
                     ABOUT
-                </a
-        >
-                <a href="#" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+                </a>
+                <a href="#services" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
                     SERVICES
-                </a
-        >
-                <a href="#" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
-                    TESIMONEALS
-                </a
-        >
-                <a href="#" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+                </a>
+                <a href="#team" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+                    TEAM
+                </a>
+                <a href="#appointment" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+                    APPOINTMENT
+                </a>
+                <a href="#testimonials" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+                    TESIMONIALS
+                </a>
+                <a href="#conteact" class="block px-3 py-2 rounded hover:bg-blue-600 hover:text-white transition">
                     CONTACT
-                </a
-        >
+                </a>
             </div>
         </nav>
         <!-- Hero Section -->
-        <section class="relative w-full">
+        <section id="hero" class="relative w-full">
             <div id="carouselSlides" class="relative w-full">
-                <div class="relative h-screen md:w-full mt-5 md:mt-0 overflow-hidden rounded-3xl">
+                <div class="relative h-screen mt-5 xl:mt-0 overflow-hidden rounded-3xl">
                     <!-- SLIDE 1 -->
-                    <div class="slide relative h-screen inset-0 w-full flex items-center px-6 md:px-12 active">
-                        <img src="https://media.istockphoto.com/id/1390886692/photo/homecare-visit-with-a-senior-gentleman.jpg?s=2048x2048&w=is&k=20&c=T1Ospj1wnFulc4K-QLCBUzcJ_Ai3iAj0JDudDj3JZE0=" class="absolute inset-0 md:w-full md:h-auto md:object-contain object-cover h-screen md:rounded-none" alt="Slide 1">
+                    <div class="slide relative h-screen inset-0 w-full flex items-center px-6 xl:px-12 active">
+                        <img src="https://media.istockphoto.com/id/1390886692/photo/homecare-visit-with-a-senior-gentleman.jpg?s=2048x2048&w=is&k=20&c=T1Ospj1wnFulc4K-QLCBUzcJ_Ai3iAj0JDudDj3JZE0=" class="absolute inset-0 xl:w-full xl:h-auto xl:object-contain object-cover h-screen xl:rounded-none" alt="Slide 1">
                         <!-- white bg -->
                         <div class="absolute inset-0 w-[60%] bg-gradient-to-r from-white from-[60%] to-transparent"></div>
-                        <div class="relative z-10 max-w-3xl md:ms-2 2xl:ms-28 text-left">
-                            <h2 class="text-blue-600 font-normal mb-4 md:mb-4 text-sm md:text-lg">
+                        <div class="relative z-10 max-w-3xl xl:ms-2 2xl:ms-28 text-left">
+                            <h2 class="text-blue-600 font-normal mb-4 xl:mb-4 text-sm xl:text-lg">
                                 CLARITY. COMFORT. CARE.
                             </h2>
-                            <h1 class="text-gray-900 md:font-medium md:mb-4 text-2xl md:text-8xl">
+                            <h1 class="text-gray-900 xl:font-medium xl:mb-4 text-2xl xl:text-8xl">
                                 Prime Wellness,
                                 <br>
                                 Healthy Life.
                             </h1>
-                            <p class="text-gray-600 mb-6 text-sm md:text-base md:w-full w-2/3">
+                            <p class="text-gray-600 mb-6 text-sm xl:text-base xl:w-full w-2/3">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Explicabo quia tempore quasi deleniti aspernatur non quibusdam
                 asperiores incidunt ex, laboriosam earum.
                             </p>
-                            <a href="#contact" class="group inline-flex items-center px-4 py-2 md:px-8 md:py-4 mt-8 bg-blue-600 font-normal text-xl md:text-3xl text-slate-100 rounded-2xl border-2 border-blue-600 transition hover:bg-transparent hover:text-blue-600">
+                            <a href="#contact" class="group inline-flex items-center px-4 py-2 xl:px-8 xl:py-4 mt-8 bg-blue-600 font-normal text-xl xl:text-3xl text-slate-100 rounded-2xl border-2 border-blue-600 transition hover:bg-transparent hover:text-blue-600">
                                 Contact Us
                                 <i class="fas fa-arrow-right ms-3 px-2 py-1 rounded bg-white text-black transition group-hover:bg-blue-600 group-hover:text-white"></i>
                             </a>
                         </div>
                     </div>
                     <!-- SLIDE 2 -->
-                    <div class="slide absolute h-screen inset-0 w-full flex items-center px-6 md:px-12">
-                        <img src="https://media.istockphoto.com/id/2208940947/photo/patient-with-a-doctor-in-medical-office.jpg?s=2048x2048&w=is&k=20&c=F0MoLH83vRQR1-lAlBlOBXFFN2ezldO0iVYJFtQt0Hc=" class="absolute inset-0 md:w-full md:h-auto md:object-contain object-cover h-screen md:rounded-none" alt="Slide 2">
+                    <div class="slide absolute h-screen inset-0 w-full flex items-center px-6 xl:px-12">
+                        <img src="https://media.istockphoto.com/id/2208940947/photo/patient-with-a-doctor-in-medical-office.jpg?s=2048x2048&w=is&k=20&c=F0MoLH83vRQR1-lAlBlOBXFFN2ezldO0iVYJFtQt0Hc=" class="absolute inset-0 xl:w-full xl:h-auto xl:object-contain object-cover h-screen xl:rounded-none" alt="Slide 2">
                         <!-- white bg -->
                         <div class="absolute inset-0 w-[60%] bg-gradient-to-r from-white from-[60%] to-transparent"></div>
-                        <div class="relative z-10 max-w-3xl md:ms-2 2xl:ms-28 text-left">
-                            <h2 class="text-blue-600 font-normal mb-2 md:mb-2 text-sm md:text-lg">
+                        <div class="relative z-10 max-w-3xl xl:ms-2 2xl:ms-28 text-left">
+                            <h2 class="text-blue-600 font-normal mb-2 xl:mb-2 text-sm xl:text-lg">
                                 YOUR FAMILY'S HEALTH
                             </h2>
-                            <h1 class="text-gray-900 md:font-medium mb-4 md:mb-4 text-2xl md:text-8xl">
+                            <h1 class="text-gray-900 xl:font-medium mb-4 xl:mb-4 text-2xl xl:text-8xl">
                                 Protect Your
                                 <br>
                                 Precious Health
                             </h1>
-                            <p class="text-gray-600 mb-6 text-sm md:text-base md:w-full w-2/3">
+                            <p class="text-gray-600 mb-6 text-sm xl:text-base xl:w-full w-2/3">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Explicabo quia tempore quasi deleniti aspernatur non quibusdam
                 asperiores incidunt ex, laboriosam earum.
                             </p>
-                            <a href="#contact" class="group inline-flex items-center px-4 py-2 md:px-8 md:py-4 mt-8 bg-blue-600 font-normal text-xl md:text-3xl text-slate-100 rounded-2xl border-2 border-blue-600 transition hover:bg-transparent hover:text-blue-600">
+                            <a href="#contact" class="group inline-flex items-center px-4 py-2 xl:px-8 xl:py-4 mt-8 bg-blue-600 font-normal text-xl xl:text-3xl text-slate-100 rounded-2xl border-2 border-blue-600 transition hover:bg-transparent hover:text-blue-600">
                                 Contact Us
                                 <i class="fas fa-arrow-right ms-3 px-2 py-1 rounded bg-white text-black transition group-hover:bg-blue-600 group-hover:text-white"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="md:absolute md:-bottom-40 md:left-1/2 md:mt-0 mt-10 md:mx-0 mx-auto md:transform md:-translate-x-1/2 z-20 flex md:flex-row flex-col gap-9 justify-center">
-                    <div class="shadow-lg w-[80%] md:w-fit mx-auto rounded-3xl bg-white py-10 flex md:flex-row flex-col text-center">
+<div class="xl:absolute xl:-bottom-40 xl:mt-0 mt-10 xl:left-1/2 xl:-translate-x-1/2 z-20 flex flex-col xl:flex-row gap-9 xl:max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
+                    <div class="shadow-lg w-[80%] xl:w-[60%] mx-auto rounded-3xl bg-white py-10 flex xl:flex-row flex-col text-center">
                         <!-- Item 1 -->
-                        <div class="items-start md:border-r border-b md:border-b-0 border-gray-200 px-5 w-[80%] mx-auto md:mx-0 md:w-72 md:py-0 py-8">
+                        <div class="items-start xl:border-r border-b xl:border-b-0 border-gray-200 px-5 w-[80%] mx-auto xl:mx-0 xl:w-72 xl:py-0 py-8">
                             <img src="https://mednix.themeht.com/wp-content/uploads/2025/10/optometrist.png" alt="Eye Examination" class="w-16 mb-5 mx-auto object-contain">
                             <span class="font-light text-gray-800 text-2xl">
                                 Eye Examination & Vision Test
@@ -201,7 +221,7 @@
               >
                         </div>
                         <!-- Item 2 -->
-                        <div class="items-start md:border-r border-b md:border-b-0 border-gray-200 px-5 w-[80%] mx-auto md:mx-0 md:w-72 md:py-0 py-8">
+                        <div class="items-start xl:border-r border-b xl:border-b-0 border-gray-200 px-5 w-[80%] mx-auto xl:mx-0 xl:w-72 xl:py-0 py-8">
                             <img src="https://mednix.themeht.com/wp-content/uploads/2025/10/smart-glasses.png" alt="Prescription Glasses" class="w-16 mb-5 object-contain mx-auto">
                             <span class="font-light text-gray-800 text-2xl">
                                 Prescription Glasses & Lenses
@@ -209,7 +229,7 @@
               >
                         </div>
                         <!-- Item 3 -->
-                        <div class="items-start px-5 w-[80%] mx-auto md:mx-0 md:w-72 md:py-0 py-8">
+                        <div class="items-start px-5 w-[80%] mx-auto xl:mx-0 xl:w-72 xl:py-0 py-8">
                             <img src="https://mednix.themeht.com/wp-content/uploads/2025/10/eye-1.png" alt="Surgical Treatments" class="w-16 mb-5 object-contain mx-auto">
                             <span class="font-light text-gray-800 text-2xl">
                                 Surgical & Laser Treatments
@@ -217,17 +237,17 @@
               >
                         </div>
                     </div>
-                    <div class="text-white flex flex-col shadow-lg w-[78%] md:w-fit md:mx-0 mx-auto rounded-3xl bg-blue-600 p-6">
+                    <div class="text-white flex flex-col shadow-lg w-[78%] xl:w-fit xl:mx-0 mx-auto rounded-3xl bg-blue-600 p-6">
                         <p class="text-2xl font-light py-2">Opening Hours:</p>
-                        <div class="flex font-light flex-row justify-between mt-2 md:w-96 border-b border-blue-400 pb-3">
+                        <div class="flex font-light flex-row justify-between mt-2 xl:w-96 border-b border-blue-400 pb-3">
                             <p>Mon - Fri</p>
                             <p>9:00 - 18:00</p>
                         </div>
-                        <div class="flex font-light flex-row justify-between mt-2 md:w-96 border-b border-blue-400 pb-3">
+                        <div class="flex font-light flex-row justify-between mt-2 xl:w-96 border-b border-blue-400 pb-3">
                             <p>Sat - Sun</p>
                             <p>8:00 - 16:00</p>
                         </div>
-                        <div class="flex font-light flex-row justify-between mt-2 md:w-96 pb-3">
+                        <div class="flex font-light flex-row justify-between mt-2 xl:w-96 pb-3">
                             <p>Emergency</p>
                             <p>24/7 Hours</p>
                         </div>
@@ -236,7 +256,7 @@
             </div>
         </section>
         <!-- About Us -->
-        <section class="w-full flex justify-center py-16 md:pt-72 bg-gray-50">
+        <section id="about" class="w-full flex justify-center py-16 md:pt-64 md:pb-32 bg-gray-50">
             <div class="max-w-[1366px] w-full h-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8">
                 <!-- Left column -->
                 <div class="text-gray-700">
@@ -270,11 +290,11 @@
             </div>
         </section>
         <!-- Utility Line -->
-        <div class="overflow-hidden whitespace-nowrap relative w-full py-5">
+        <div id="utility" class="overflow-hidden whitespace-nowrap relative w-full py-5 cursor-pointer">
             <div id="marquee" class="animate-marquee flex items-center space-x-14 text-5xl text-[#0F1E4C]"></div>
         </div>
         <!-- Service Section -->
-        <section class="bg-blue-700 text-center pt-20">
+        <section id="services" class="bg-blue-700 text-center pt-24">
             <h2 class="text-white font-normal mb-5 text-sm md:text-base rounded-full px-3 py-1 inline-flex items-center justify-center w-max mx-auto" style="box-shadow: inset -4px -4px 6px rgba(0, 0, 0, 0.3)">
                 <span class="dot mr-2 w-2 h-2 rounded-full bg-white"></span>
                 Health
@@ -284,7 +304,7 @@
                 Providing Quality Eye Care and
                 <span class="italic">Vision Support</span>
             </h1>
-            <section class="mx-auto px-6 md:px-24 py-10">
+            <section class="mx-auto px-6 md:px-14 2xl:px-24 py-8">
                 <div class="swiper relative">
                     <div id="cardContainer" class="swiper-wrapper"></div>
                     <div class="swiper-pagination mt-16 relative z-50"></div>
@@ -292,7 +312,7 @@
             </section>
         </section>
         <!-- Team Section -->
-        <section class="w-full py-8 md:py-24 bg-gray-50 mb-16">
+        <section id="team" class="w-full py-8 md:py-24 bg-gray-50 mb-16">
             <div class="max-w-[1366px] mx-auto md:px-12 2xl:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-[44%_56%] px-6 md:px-0 items-center">
                     <!-- Left side -->
@@ -356,20 +376,20 @@
             </div>
         </section>
         <!-- Appointment Section -->
-        <section class="relative rounded-3xl overflow-hidden">
+        <section id="appointment" class="relative rounded-3xl 2xl:h-screen overflow-hidden">
             <!-- Image -->
-            <div class="w-full md:h-screen h-auto">
-                <img src="https://img.freepik.com/premium-photo/support-caregiver-with-senior-woman-holding-hands-care-indoors-retirement-consulting-professional-female-nurse-with-elderly-person-smiling-together-healthcare-nursing-home_776674-840080.jpg" alt="Hero Image" class="w-full h-56 object-cover  md:hidden">
-                <div class="hidden md:block relative bg-[url('https://img.freepik.com/premium-photo/support-caregiver-with-senior-woman-holding-hands-care-indoors-retirement-consulting-professional-female-nurse-with-elderly-person-smiling-together-healthcare-nursing-home_776674-840080.jpg')] bg-cover bg-fixed h-screen w-full "></div>
+            <div class="w-full md:h-full h-auto">
+                <img src="https://img.freepik.com/premium-photo/support-caregiver-with-senior-woman-holding-hands-care-indoors-retirement-consulting-professional-female-nurse-with-elderly-person-smiling-together-healthcare-nursing-home_776674-840080.jpg" alt="Hero Image" class="w-full h-56 sm:h-screen object-cover 2xl:hidden">
+                <div class="hidden 2xl:block relative bg-[url('https://img.freepik.com/premium-photo/support-caregiver-with-senior-woman-holding-hands-care-indoors-retirement-consulting-professional-female-nurse-with-elderly-person-smiling-together-healthcare-nursing-home_776674-840080.jpg')] bg-cover bg-fixed h-full w-full "></div>
             </div>
             <!-- Blue overlay -->
-            <div class="bg-blue-950 w-full md:absolute md:bottom-0 md:h-1/2 h-auto relative">
-                <!-- Grid content -->
-                <div class="max-w-[1366px] md:absolute md:inset-0 mx-auto px-8 pt-14 md:py-0 grid md:grid-cols-2 gap-8 md:bottom-0 md:-translate-y-1/2 md:items-end">
+            <div class="bg-blue-950 w-full 2xl:absolute 2xl:bottom-0 h-auto sm:h-96 2xl:h-1/2 relative">
+                <!-- Grid content Mobile -->
+                <div class="2xl:hidden max-w-[1366px] sm:absolute sm:bottom-0 mx-auto px-8 sm:px-28 pt-14 sm:pt-0 grid sm:grid-cols-2 gap-8 md:items-end">
                     <!-- Left Column -->
-                    <div class="flex flex-col mb-10 md:mb-28 gap-10 ">
-                        <div class="flex flex-col md:flex-row gap-8 md:gap-28 md:items-center">
-                            <i class="fa-solid fa-heart-pulse text-blue-600 text-[200px] "></i>
+                    <div class="flex flex-col mb-10 sm:mb-14 gap-10 ">
+                        <div class="flex flex-col md:flex-row gap-8 md:gap-20 md:items-center">
+                            <i class="fa-solid fa-heart-pulse text-blue-600 text-[200px] sm:text-[150px]"></i>
                             <div>
                                 <div class="text-white flex flex-col w-full md:w-64">
                                     <div class="flex font-light flex-row justify-between mt-2  border-b border-gray-500 pb-3">
@@ -388,7 +408,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-6 md:gap-20 items-start">
-                            <div class="flex gap-4 ">
+                            <div class="flex gap-4">
                                 <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full text-xl text-white bg-blue-600 flex items-center justify-center">
                                     <i class="fa-brands fa-slideshare"></i>
                                 </div>
@@ -413,7 +433,7 @@
                     </div>
                     <!-- Right Column: Form -->
                     <div>
-                        <form class="w-full max-w-full sm:max-w-2xl mx-auto px-10 sm:px-20 py-8 sm:py-20 bg-white rounded-t-3xl shadow-lg space-y-4">
+                        <form class="w-full mx-auto px-10 py-8 md:py-20 bg-white rounded-t-3xl shadow-lg space-y-4">
                             <h2 class="text-black font-normal mb-2 text-sm md:text-lg rounded-full px-3 py-1 inline-flex items-center" style="box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.3)">
                                 <span class="dot mr-2"></span>
                                 Make an Appointment
@@ -452,16 +472,103 @@
                     </div>
                 </div>
             </div>
+            <!-- Grid content Desktop 2XL -->
+            <div class="hidden 2xl:block max-w-[1366px] absolute inset-0 mx-auto px-8 pt-14 2xl:grid 2xl:grid-cols-2 gap-8 md:bottom-0 md:items-end">
+                <!-- Left Column -->
+                <div class="flex flex-col mb-10 md:pb-24 gap-10 ">
+                    <div class="flex flex-col md:flex-row gap-8 md:gap-28 md:items-center">
+                        <i class="fa-solid fa-heart-pulse text-blue-600 text-[200px]"></i>
+                        <div>
+                            <div class="text-white flex flex-col w-full md:w-64">
+                                <div class="flex font-light flex-row justify-between mt-2  border-b border-gray-500 pb-3">
+                                    <p>Mon - Fri</p>
+                                    <p>9:00 - 18:00</p>
+                                </div>
+                                <div class="flex font-light flex-row justify-between mt-2  border-b border-gray-500 pb-3">
+                                    <p>Sat - Sun</p>
+                                    <p>8:00 - 16:00</p>
+                                </div>
+                                <div class="flex font-light flex-row justify-between mt-2  pb-3">
+                                    <p>Emergency</p>
+                                    <p>24/7 Hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-6 md:gap-20 items-start">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full text-xl text-white bg-blue-600 flex items-center justify-center">
+                                <i class="fa-brands fa-slideshare"></i>
+                            </div>
+                            <div class="text-white text-base">
+                                <h5 class="mb-1">Visit Our Center</h5>
+                                <p>
+                                    5th Street, 21st Floor,
+                                    <span class="md:block">New York, USA</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start sm:items-center">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full text-xl text-white bg-blue-600 flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="text-white text-base">
+                                <h5 class="mb-1">Need Our Service?</h5>
+                                <p>(888) 4567890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Form -->
+                <div>
+                    <form class="w-full mx-auto px-10 py-8 md:py-20 bg-white rounded-t-3xl shadow-lg space-y-4">
+                        <h2 class="text-black font-normal mb-2 text-sm md:text-lg rounded-full px-3 py-1 inline-flex items-center" style="box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.3)">
+                            <span class="dot mr-2"></span>
+                            Make an Appointment
+                        </h2>
+                        <h2 class="text-3xl sm:text-5xl font- mb-4 text-black">
+                            Book
+                            <span class="italic text-blue-600">Appointment</span>
+                        </h2>
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                            <input type="text" placeholder="Your Name" class="flex-1 w-full border bg-white text-black font-light border-gray-300 rounded-lg md:p-2 2xl:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="email" placeholder="Email Address" class="flex-1 w-full border bg-white text-black font-light border-gray-300 rounded-lg md:p-2 2xl:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                            <input type="tel" placeholder="Phone" class="flex-1 w-full border bg-white text-black font-light border-gray-300 rounded-lg md:p-2 2xl:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <select class="flex-1 w-full border font-light bg-white text-gray-400 border-gray-300 rounded-lg md:p-2 2xl:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Select Department</option>
+                                <option>General</option>
+                                <option>Cardiology</option>
+                                <option>Dermatology</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                            <select class="flex-1 w-full border bg-white text-gray-400 font-light border-gray-300 rounded-lg md:p-2 2xl:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Select Doctor</option>
+                                <option>Dr. Smith</option>
+                                <option>Dr. Johnson</option>
+                                <option>Dr. Lee</option>
+                            </select>
+                            <input type="date" class="flex-1 w-full border text-gray-400 font-light border-gray-300 rounded-lg md:p-2 2xl:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <textarea placeholder="Type Your Message" class="w-full border text-black font-light border-gray-300 rounded-lg md:p-2 2xl:p-3 mb-6 sm:mb-8 h-32 sm:h-40 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full sm:w-auto bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
         </section>
         <!-- Testimonials Section -->
-        <section class="relative bg-slate-50">
-            <div class="viewport space-y-8 md:space-y-10">
-                <div class="track left py-4 pt-10 md:pt-28" id="row1"></div>
-                <div class="track right py-4 pb-10 md:pb-40" id="row2"></div>
+        <section id="testimonials" class="relative bg-slate-50">
+            <div class="viewport space-y-10 sm:space-y-0">
+                <div class="track left pt-10 sm:pt-14 2xl:pt-20" id="row1"></div>
+                <div class="track right pb-10 sm:pt-20 2xl:pb-28" id="row2"></div>
             </div>
         </section>
         <!-- Contact Section -->
-        <section class="w-full md:flex md:items-center px-5 py-14 md:py-32 bg-blue-700">
+        <section id="contact" class="w-full md:flex md:items-center px-5 py-14 md:py-32 bg-blue-700">
             <div class="max-w-[1366px] mx-auto flex flex-col md:flex-row md:gap-16">
                 <!-- Left col -->
                 <div>
@@ -559,9 +666,9 @@
             Message Sent!
         </div>
         <!-- Footer Section -->
-        <section class="bg-slate-50">
+        <section id="footer" class="bg-slate-50">
             <!-- Footer -->
-            <footer class="text-gray-600 pt-16 pb-8 max-w-[1366px] mx-auto">
+            <footer class="text-gray-600 pt-16 pb-6 max-w-[1366px] mx-auto">
                 <div class="px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
                     <!-- Logo & About -->
                     <div class="flex flex-col space-y-4">
@@ -579,10 +686,10 @@
                             <a href="#" class="hover:text-blue-400 transition">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#" class="hover:text-pink-500 transition">
+                            <a href="#" class="hover:text-blue-700 transition">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="hover:text-blue-700 transition">
+                            <a href="#" class="hover:text-pink-500 transition">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -590,28 +697,28 @@
                     <!-- Quick Links -->
                     <div>
                         <h3 class="font-semibold mb-4 text-lg">Quick Links</h3>
-                        <ul class="space-y-2 text-gray-400">
+                        <ul class="space-y-3 2xl:space-y-4 text-gray-400">
                             <li>
-                                <a href="#" class="hover:text-gray-900 transition">Home</a>
+                                <a href="#hero" class="hover:text-gray-900 transition">Home</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-900 transition">About</a>
+                                <a href="#about" class="hover:text-gray-900 transition">About</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-900 transition">Services</a>
+                                <a href="#services" class="hover:text-gray-900 transition">Services</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-900 transition">Testimonials</a>
+                                <a href="#testimonials" class="hover:text-gray-900 transition">Testimonials</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:text-gray-900 transition">Contact</a>
+                                <a href="#contact" class="hover:text-gray-900 transition">Contact</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Contact Info -->
                     <div>
                         <h3 class="font-semibold mb-4 text-lg">Contact Us</h3>
-                        <ul class="space-y-2 text-gray-400">
+                        <ul class="space-y-3 2xl:space-y-4 text-gray-400">
                             <li>
                                 <i class="fas fa-map-marker-alt me-2"></i>
                                 5th Street, 21st Floor, New York, USA
@@ -641,7 +748,7 @@
                     <!-- Services & Quick Appointment -->
                     <div>
                         <h3 class="font-semibold mb-4 text-lg">Our Services</h3>
-                        <ul class="space-y-2 text-gray-400">
+                        <ul class="space-y-3 2xl:space-y-4 text-gray-400">
                             <li>
                                 <i class="fas fa-eye me-2"></i>
                                 Eye Examination
@@ -664,11 +771,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-500 text-sm">
+                <div class="border-t border-gray-700 mt-12 pt-5 text-center text-gray-500 text-sm">
                     &copy; 2025 Jaykron. All Rights Reserved.
                     <br>
                     Website by
-                    <a href="https://yourwebsite.com" class="hover:text-gray-600">Jaykron</a>
+                    <a href="https://yourwebsite.com" class="hover:text-red-400">Jaykron</a>
                 </div>
             </footer>
         </section>
